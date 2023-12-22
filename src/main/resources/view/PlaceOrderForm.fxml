@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderFormController">
+   <top>
+      <GridPane prefHeight="204.0" prefWidth="851.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="189.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="189.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="189.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="189.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="106.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="144.0" minHeight="0.0" prefHeight="55.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="109.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <JFXComboBox fx:id="cmbItemCode" prefWidth="160.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <JFXComboBox fx:id="cmbCustId" prefHeight="25.0" prefWidth="161.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <JFXTextField fx:id="txtDesc" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="txtUnitPrice" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="txtQty" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+            </JFXTextField>
+            <Label text="Customer ID" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Item Code" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </Label>
+            <JFXTextField fx:id="txtName" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </GridPane.margin>
+            </JFXTextField>
+            <Label text="Name" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Description" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Unit Price" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Buying QTY" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label fx:id="lblOrderID" contentDisplay="GRAPHIC_ONLY" prefHeight="17.0" prefWidth="82.0" text="ORDER ID" GridPane.columnIndex="4">
+               <GridPane.margin>
+                  <Insets left="60.0" />
+               </GridPane.margin>
+            </Label>
+            <JFXButton onAction="#addToCartButtonOnAction" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #ffd971;" text="Add to Cart" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="40.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+             <Button layoutY="12.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="17.0" prefWidth="29.0">
+                 <graphic>
+                     <ImageView fitHeight="23.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                         <image>
+                             <Image url="@../img/back.png" />
+                         </image>
+                     </ImageView>
+                 </graphic>
+             </Button>
+            <JFXButton onAction="#PlaceOrderButtonOnAction" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: #f04cee;" text="Place Order" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
+            </JFXButton>
+         </children>
+      </GridPane>
+   </top>
+   <right>
+      <Label prefHeight="17.0" prefWidth="54.0" text="Total :" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="30.0" right="80.0" top="280.0" />
+         </BorderPane.margin>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </right>
+   <bottom>
+      <Label fx:id="lbltotal" text="0.00" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="70.0" left="700.0" />
+         </BorderPane.margin>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </bottom>
+   <left>
+      <JFXTreeTableView fx:id="tblOrder" prefHeight="264.0" prefWidth="675.0" BorderPane.alignment="CENTER">
+         <columns>
+            <TreeTableColumn fx:id="colCode" prefWidth="146.0" text="Code" />
+            <TreeTableColumn fx:id="colDesc" prefWidth="153.0" text="Description" />
+            <TreeTableColumn fx:id="colQty" minWidth="0.0" prefWidth="142.0" text="QTY" />
+            <TreeTableColumn fx:id="colAmunt" minWidth="0.0" prefWidth="114.0" text="Amount" />
+            <TreeTableColumn fx:id="colOption" prefWidth="119.0" text="Option" />
+         </columns>
+      </JFXTreeTableView>
+   </left>
+</BorderPane>
